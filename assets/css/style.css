@@ -1,0 +1,490 @@
+:root {
+    --red: #e30613;
+    --black: #060606;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--black) !important;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 600;
+}
+
+section {
+    border-bottom: 1px solid var(--red);
+}
+
+.hr-heading {
+    width: 80px;
+    height: 3px;
+    background-color: var(--red);
+    border: none;
+    opacity: 1;
+}
+
+small {
+    color: var(--red);
+}
+
+.btn-cta {
+    background-color: var(--red);
+    color: var(--black);
+    padding: 10px 30px;
+    border: 1px solid var(--red);
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: transparent;
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.btn-cta-sec {
+    background-color: transparent;
+    color: var(--red);
+    padding: 10px 30px;
+    border: 1px solid var(--red);
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta-sec:hover {
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    color: var(--black);
+}
+
+/*----------------------------------------------------------------- Navbar: */
+
+.navbar {
+    background-color: var(--black);
+    border-bottom: 1px solid var(--red);
+    padding: 12px 0;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-link {
+    color: var(--white) !important;
+}
+
+.nav-link:hover {
+    color: var(--red) !important;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--red);
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    background-color: var(--red);
+    border-radius: 100px;
+}
+
+.offcanvas-body, .offcanvas-header {
+    background-color: var(--black);
+}
+
+.offcanvas-body {
+    text-align: center;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid var(--red);
+}
+
+/*----------------------------------------------------------------- Hero Section: */
+
+.hero-section {
+    height: 100vh;
+    padding-top: 76px;
+    background: url("../images/test-image-bar.jpg") rgba(0, 0, 0, 0.8);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-down-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--red); /* Roter Rand mit leichter Transparenz */
+    background-color: transparent; /* Leicht transparenter schwarzer Kern */
+    color: var(--red);
+    border-radius: 50%;
+    font-size: 22px;
+    text-decoration: none !important;
+    transition: all 0.3s ease-in-out;
+    
+    /* Sanfte Auf- und Ab-Animation, um Interaktion zu signalisieren */
+    animation: bounce 2s infinite;
+}
+
+.scroll-down-btn:hover {
+    border-color: var(--red);
+    background-color: var(--red);
+    color: var(--black);
+    box-shadow: 0 0 15px rgba(227, 6, 19, 0.4);
+}
+
+/* Keyframes für den subtilen Bouncing-Effekt */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/*----------------------------------------------------------------- Aktionen Section: */
+
+/* Moderne Glassmorphism Card */
+.promo-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Interaktions-Effekt beim Drüberfahren (Card hebt sich, Rand wird rot) */
+.promo-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(227, 6, 19, 0.4) !important;
+    box-shadow: 0 15px 40px rgba(227, 6, 19, 0.15);
+}
+
+/* Stylischer Badge für den Wochentag */
+.badge-promo {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 50px;
+}
+
+/* Bild-Wrapper kontrolliert die Höhe der Drinks */
+.promo-image-wrapper {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.promo-img {
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Das Glas "bewegt" sich leicht nach oben/vorne beim Hovern */
+.promo-card:hover .promo-img {
+    transform: scale(1.08) translateY(-5px);
+}
+
+/* Preis-Hervorhebung */
+.promo-price {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+/* Text-Farbe für die "Aktion"-Kategorie */
+.text-red {
+    color: var(--red);
+}
+
+/*----------------------------------------------------------------- Karte Section: */
+
+#karte {
+    background-color: var(--black);
+}
+
+/* Bild-Boxen im Grid */
+.menu-preview-box {
+    height: 400px; /* Feste Höhe für die Teaser-Bilder */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #111;
+}
+
+.menu-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dunkler Verlauf über den Bildern, damit der Text unten (z.B. "Café bei Tag") lesbar ist */
+.preview-overlay {
+    top: 0;
+    background: linear-gradient(to top, rgba(6, 6, 6, 0.9) 0%, rgba(6, 6, 6, 0.2) 50%, transparent 100%);
+    transition: background 0.4s ease;
+}
+
+/* Hover-Effekt: Bild zoomed leicht, Overlay wird etwas intensiver */
+.menu-preview-box:hover .menu-preview-img {
+    transform: scale(1.05);
+}
+
+.menu-preview-box:hover .preview-overlay {
+    background: linear-gradient(to top, rgba(223, 6, 19, 0.4) 0%, rgba(6, 6, 6, 0.3) 60%, transparent 100%);
+}
+
+/* Text-Feinheiten */
+#karte .text-secondary {
+    color: #b0b0b0 !important;
+    line-height: 1.7;
+}
+
+/* Responsive Korrektur für mobile Geräte */
+@media (max-width: 575.98px) {
+    .menu-preview-box {
+        height: 280px;
+    }
+}
+
+/*----------------------------------------------------------------- Galerie Section: */
+
+#galerie {
+    background-color: var(--black);
+}
+
+/* Verhindert ein Verzerren oder Verziehen der Bilder im Slider */
+.gallery-img-wrapper {
+    position: relative;
+    height: 480px; /* Perfekt abgestimmte Höhe analog zur Event-Sektion */
+    width: 100%;
+}
+
+.gallery-slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Modifizieren der Bootstrap Karussell-Indikatoren (Punkte unten) */
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: 0.4;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--red);
+    transform: scale(1.2);
+}
+
+/* Responsive Anpassung für kleinere Displays */
+@media (max-width: 991.98px) {
+    .gallery-img-wrapper {
+        height: 320px; /* Kompakter auf Smartphones */
+    }
+}
+
+/*----------------------------------------------------------------- Events Section: */
+
+#events {
+    background-color: var(--black);
+}
+
+/* Bild-Container Styling */
+.event-image-container {
+    height: 480px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtiler Zoom-Effekt, wenn man über die Sektion/das Bild hovert */
+.event-image-container:hover .event-img {
+    transform: scale(1.04);
+}
+
+.border-event-section {
+    border-left: 3px solid var(--red);
+    padding-left: 20px;
+}
+
+/* Styling für die markanten Key-Fact Zahlen (90 / 30) */
+.fact-box span {
+    font-family: 'Red Hat Display', sans-serif; /* Deine Headline-Schrift */
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.fact-box small {
+    font-size: 0.8rem !important;
+    line-height: 1.3;
+}
+
+/* Responsive Anpassung für kleinere Bildschirme */
+@media (max-width: 991.98px) {
+    .event-image-container {
+        height: 320px;
+    }
+}
+
+/*----------------------------------------------------------------- Kontakt Section: */
+
+#kontakt {
+    background-color: var(--black);
+}
+
+.info-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-list span {
+    color: #b0b0b0;
+}
+
+.contact-list a:hover {
+    color: var(--red) !important;
+}
+
+.map-container {
+    height: 220px;
+}
+
+/* Custom Styling für das Formular, damit es dunkel und edel wirkt */
+.custom-input {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--white) !important;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styling für Platzhaltertext */
+.custom-input::placeholder {
+    color: #6c757d !important;
+}
+
+/* Fokus-Zustand (Wenn der User in ein Feld klickt) */
+.custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--red) !important;
+    box-shadow: 0 0 10px rgba(227, 6, 19, 0.15) !important;
+}
+
+/* Dropdown/Select Optionen fixieren für dunkle Darstellung */
+.custom-input option {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Custom Checkbox Farbe anpassen */
+.custom-checkbox:checked {
+    background-color: var(--red) !important;
+    border-color: var(--red) !important;
+}
+
+.custom-checkbox {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-label {
+    color: #b0b0b0;
+    margin-bottom: 6px;
+}
+
+/*----------------------------------------------------------------- Footer: */
+
+footer {
+    background-color: var(--black);
+}
+
+.footer-link {
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: var(--red) !important;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+    display: inline-block;
+}
+
+/*------------------------------------------------------- Mediaquery: */
+
+@media (min-width: 992px) {
+    section {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 991px) {
+    section {
+        padding: 50px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    h1, .h1 {
+        font-size: 50px !important;
+    }
+
+    h2, .h2 {
+        font-size: 45px !important;
+    }
+
+    h3, .h3 {
+        font-size: 40px !important;
+    }
+
+    h4, .h4 {
+        font-size: 35px !important;
+    }
+
+    h5, .h5 {
+        font-size: 30px !important;
+    }
+
+    h6, .h6 {
+        font-size: 20px !important;
+    }
+
+    p {
+        font-size: 18px !important;
+    }
+
+    a {
+        font-size: 18px !important;
+    }
+
+    li {
+        font-size: 18px !important;
+    }
+
+    small {
+        font-size: 17px !important;
+    }
+}
