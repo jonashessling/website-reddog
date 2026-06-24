@@ -10,6 +10,10 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 600;
